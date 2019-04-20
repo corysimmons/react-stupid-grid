@@ -2,8 +2,23 @@
   "name": "react-stupid-grid",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "build": "babel index.src.js -o index.js"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0"
   }
 }
