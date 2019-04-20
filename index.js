@@ -7,6 +7,8 @@ exports.Col = exports.Row = exports.breakpoints = void 0;
 
 var _styled = _interopRequireDefault(require("@emotion/styled"));
 
+var _react = _interopRequireDefault(require("react"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject2() {
@@ -110,10 +112,10 @@ var Row = function Row(_ref14) {
   var _ref14$gutter = _ref14.gutter,
       gutter = _ref14$gutter === void 0 ? defaultGutter : _ref14$gutter,
       children = _ref14.children;
-  return React.createElement(StyledRow, {
+  return _react["default"].createElement(StyledRow, {
     gutter: gutter
-  }, React.Children.map(children, function (child, index) {
-    return React.cloneElement(child, {
+  }, _react["default"].Children.map(children, function (child, index) {
+    return _react["default"].cloneElement(child, {
       index: index,
       gutter: gutter
     });
@@ -128,7 +130,7 @@ var Col = function Col(_ref15) {
       md = _ref15.md,
       lg = _ref15.lg,
       children = _ref15.children;
-  return React.createElement(StyledCol, {
+  return _react["default"].createElement(StyledCol, {
     gutter: gutter,
     sm: sm,
     md: md,
