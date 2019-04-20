@@ -7,7 +7,7 @@ export const breakpoints = {
   lg: '1440px',
 }
 
-const defaultGutter = '1rem'
+const defaultGutter = '2rem'
 
 const StyledRow = styled.div`
   display: flex;

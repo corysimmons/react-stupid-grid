@@ -3,7 +3,8 @@
   "version": "1.0.3",
   "main": "index.js",
   "scripts": {
-    "build": "babel index.src.js -o index.js"
+    "build": "babel index.src.js -o index.js",
+    "precommit": "yarn build"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
