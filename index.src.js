@@ -49,7 +49,7 @@ const StyledCol = styled.div`
     }};
   }
 
-  @media (min-width: ${breakpoints.md}) {
+  @media (min-width: ${breakpoints.desktop}) {
     width: ${({ desktop }) => {
       if (desktop === 'auto') {
         return 'auto'

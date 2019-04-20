@@ -88,7 +88,7 @@ var StyledCol = _styled["default"].div(_templateObject2(), function (_ref3) {
   if (tablet === 'auto') {
     return '1';
   }
-}, breakpoints.md, function (_ref11) {
+}, breakpoints.desktop, function (_ref11) {
   var desktop = _ref11.desktop;
 
   if (desktop === 'auto') {
