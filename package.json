@@ -1,6 +1,6 @@
 {
   "name": "react-stupid-grid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "scripts": {
     "build": "babel index.src.js -o index.js"
