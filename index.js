@@ -39,7 +39,7 @@ var breakpoints = {
   lg: '1440px'
 };
 exports.breakpoints = breakpoints;
-var defaultGutter = '1rem';
+var defaultGutter = '2rem';
 
 var StyledRow = _styled["default"].div(_templateObject(), function (_ref) {
   var gutter = _ref.gutter;
