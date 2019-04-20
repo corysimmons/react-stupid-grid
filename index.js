@@ -7,12 +7,10 @@ exports.Col = exports.Row = exports.breakpoints = void 0;
 
 var _styled = _interopRequireDefault(require("@emotion/styled"));
 
-var _react = _interopRequireDefault(require("react"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  margin-right: ", ";\n\n  @media (min-width: ", ") {\n    width: ", ";\n\n    flex: ", ";\n  }\n\n  @media (min-width: ", ") {\n    width: ", ";\n\n    flex: ", ";\n  }\n\n  @media (min-width: ", ") {\n    width: ", ";\n\n    flex: ", ";\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin-left: ", ";\n  margin-right: ", ";\n\n  width: ", ";\n\n  flex: ", ";\n\n  @media (min-width: ", ") {\n    width: ", ";\n\n    flex: ", ";\n  }\n\n  @media (min-width: ", ") {\n    width: ", ";\n\n    flex: ", ";\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -34,9 +32,8 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var breakpoints = {
-  sm: '425px',
-  md: '768px',
-  lg: '1440px'
+  tablet: '425px',
+  desktop: '1024px'
 };
 exports.breakpoints = breakpoints;
 var defaultGutter = '2rem';
@@ -55,55 +52,55 @@ var StyledCol = _styled["default"].div(_templateObject2(), function (_ref3) {
 }, function (_ref4) {
   var gutter = _ref4.gutter;
   return "calc(".concat(gutter, " / 2)");
-}, breakpoints.sm, function (_ref5) {
-  var sm = _ref5.sm;
+}, function (_ref5) {
+  var def = _ref5["default"];
 
-  if (sm === 'auto') {
+  if (def === 'auto') {
     return 'auto';
   } else {
     return function (_ref6) {
       var gutter = _ref6.gutter;
-      return "calc(100% * ".concat(sm, " - ").concat(gutter, ")");
+      return "calc(100% * ".concat(def, " - ").concat(gutter, ")");
     };
   }
 }, function (_ref7) {
-  var sm = _ref7.sm;
+  var def = _ref7["default"];
 
-  if (sm === 'auto') {
+  if (def === 'auto') {
     return '1';
   }
-}, breakpoints.md, function (_ref8) {
-  var md = _ref8.md;
+}, breakpoints.tablet, function (_ref8) {
+  var tablet = _ref8.tablet;
 
-  if (md === 'auto') {
+  if (tablet === 'auto') {
     return 'auto';
   } else {
     return function (_ref9) {
       var gutter = _ref9.gutter;
-      return "calc(100% * ".concat(md, " - ").concat(gutter, ")");
+      return "calc(100% * ".concat(tablet, " - ").concat(gutter, ")");
     };
   }
 }, function (_ref10) {
-  var md = _ref10.md;
+  var tablet = _ref10.tablet;
 
-  if (md === 'auto') {
+  if (tablet === 'auto') {
     return '1';
   }
-}, breakpoints.lg, function (_ref11) {
-  var lg = _ref11.lg;
+}, breakpoints.md, function (_ref11) {
+  var desktop = _ref11.desktop;
 
-  if (lg === 'auto') {
+  if (desktop === 'auto') {
     return 'auto';
   } else {
     return function (_ref12) {
       var gutter = _ref12.gutter;
-      return "calc(100% * ".concat(lg, " - ").concat(gutter, ")");
+      return "calc(100% * ".concat(desktop, " - ").concat(gutter, ")");
     };
   }
 }, function (_ref13) {
-  var lg = _ref13.lg;
+  var desktop = _ref13.desktop;
 
-  if (lg === 'auto') {
+  if (desktop === 'auto') {
     return '1';
   }
 });
@@ -112,10 +109,10 @@ var Row = function Row(_ref14) {
   var _ref14$gutter = _ref14.gutter,
       gutter = _ref14$gutter === void 0 ? defaultGutter : _ref14$gutter,
       children = _ref14.children;
-  return _react["default"].createElement(StyledRow, {
+  return React.createElement(StyledRow, {
     gutter: gutter
-  }, _react["default"].Children.map(children, function (child, index) {
-    return _react["default"].cloneElement(child, {
+  }, React.Children.map(children, function (child, index) {
+    return React.cloneElement(child, {
       index: index,
       gutter: gutter
     });
@@ -126,15 +123,15 @@ exports.Row = Row;
 
 var Col = function Col(_ref15) {
   var gutter = _ref15.gutter,
-      sm = _ref15.sm,
-      md = _ref15.md,
-      lg = _ref15.lg,
+      def = _ref15["default"],
+      tablet = _ref15.tablet,
+      desktop = _ref15.desktop,
       children = _ref15.children;
-  return _react["default"].createElement(StyledCol, {
+  return React.createElement(StyledCol, {
     gutter: gutter,
-    sm: sm,
-    md: md,
-    lg: lg
+    "default": def,
+    tablet: tablet,
+    desktop: desktop
   }, children);
 };
 

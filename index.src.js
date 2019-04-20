@@ -1,10 +1,8 @@
 import styled from '@emotion/styled'
-import React from 'react'
 
 export const breakpoints = {
-  sm: '425px',
-  md: '768px',
-  lg: '1440px',
+  tablet: '425px',
+  desktop: '1024px',
 }
 
 const defaultGutter = '2rem'
@@ -20,49 +18,47 @@ const StyledCol = styled.div`
   margin-left: ${({ gutter }) => `calc(${gutter} / 2)`};
   margin-right: ${({ gutter }) => `calc(${gutter} / 2)`};
 
-  @media (min-width: ${breakpoints.sm}) {
-    width: ${({ sm }) => {
-      if (sm === 'auto') {
+  width: ${({ default: def }) => {
+    if (def === 'auto') {
+      return 'auto'
+    } else {
+      return ({ gutter }) => `calc(100% * ${def} - ${gutter})`
+    }
+  }};
+
+  flex: ${({ default: def }) => {
+    if (def === 'auto') {
+      return '1'
+    }
+  }};
+
+  @media (min-width: ${breakpoints.tablet}) {
+    width: ${({ tablet }) => {
+      if (tablet === 'auto') {
         return 'auto'
       } else {
-        return ({ gutter }) => `calc(100% * ${sm} - ${gutter})`
+        return ({ gutter }) => `calc(100% * ${tablet} - ${gutter})`
       }
     }};
 
-    flex: ${({ sm }) => {
-      if (sm === 'auto') {
+    flex: ${({ tablet }) => {
+      if (tablet === 'auto') {
         return '1'
       }
     }};
   }
 
   @media (min-width: ${breakpoints.md}) {
-    width: ${({ md }) => {
-      if (md === 'auto') {
+    width: ${({ desktop }) => {
+      if (desktop === 'auto') {
         return 'auto'
       } else {
-        return ({ gutter }) => `calc(100% * ${md} - ${gutter})`
+        return ({ gutter }) => `calc(100% * ${desktop} - ${gutter})`
       }
     }};
 
-    flex: ${({ md }) => {
-      if (md === 'auto') {
-        return '1'
-      }
-    }};
-  }
-
-  @media (min-width: ${breakpoints.lg}) {
-    width: ${({ lg }) => {
-      if (lg === 'auto') {
-        return 'auto'
-      } else {
-        return ({ gutter }) => `calc(100% * ${lg} - ${gutter})`
-      }
-    }};
-
-    flex: ${({ lg }) => {
-      if (lg === 'auto') {
+    flex: ${({ desktop }) => {
+      if (desktop === 'auto') {
         return '1'
       }
     }};
@@ -80,8 +76,8 @@ export const Row = ({ gutter = defaultGutter, children }) => (
   </StyledRow>
 )
 
-export const Col = ({ gutter, sm, md, lg, children }) => (
-  <StyledCol gutter={gutter} sm={sm} md={md} lg={lg}>
+export const Col = ({ gutter, default: def, tablet, desktop, children }) => (
+  <StyledCol gutter={gutter} default={def} tablet={tablet} desktop={desktop}>
     {children}
   </StyledCol>
 )
