@@ -1,0 +1,9 @@
+{
+  "name": "react-stupid-grid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10"
+  }
+}
