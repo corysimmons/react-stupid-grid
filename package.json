@@ -3,8 +3,7 @@
   "version": "1.0.3",
   "main": "index.js",
   "scripts": {
-    "build": "babel index.src.js -o index.js",
-    "pre-push": "yarn build"
+    "build": "babel index.src.js -o index.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -16,6 +15,11 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn build"
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
