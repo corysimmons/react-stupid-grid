@@ -110,9 +110,11 @@ var StyledCol = _styled["default"].div(_templateObject2(), function (_ref3) {
 var Row = function Row(_ref14) {
   var _ref14$gutter = _ref14.gutter,
       gutter = _ref14$gutter === void 0 ? defaultGutter : _ref14$gutter,
-      children = _ref14.children;
+      children = _ref14.children,
+      key = _ref14.key;
   return _react["default"].createElement(StyledRow, {
-    gutter: gutter
+    gutter: gutter,
+    key: key
   }, _react["default"].Children.map(children, function (child, index) {
     return _react["default"].cloneElement(child, {
       index: index,
@@ -128,12 +130,14 @@ var Col = function Col(_ref15) {
       def = _ref15["default"],
       tablet = _ref15.tablet,
       desktop = _ref15.desktop,
-      children = _ref15.children;
+      children = _ref15.children,
+      key = _ref15.key;
   return _react["default"].createElement(StyledCol, {
     gutter: gutter,
     "default": def,
     tablet: tablet,
-    desktop: desktop
+    desktop: desktop,
+    key: key
   }, children);
 };
 

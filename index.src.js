@@ -66,8 +66,8 @@ const StyledCol = styled.div`
   }
 `
 
-export const Row = ({ gutter = defaultGutter, children }) => (
-  <StyledRow gutter={gutter}>
+export const Row = ({ gutter = defaultGutter, children, key }) => (
+  <StyledRow gutter={gutter} key={key}>
     {React.Children.map(children, (child, index) => {
       return React.cloneElement(child, {
         index,
@@ -77,8 +77,21 @@ export const Row = ({ gutter = defaultGutter, children }) => (
   </StyledRow>
 )
 
-export const Col = ({ gutter, default: def, tablet, desktop, children }) => (
-  <StyledCol gutter={gutter} default={def} tablet={tablet} desktop={desktop}>
+export const Col = ({
+  gutter,
+  default: def,
+  tablet,
+  desktop,
+  children,
+  key,
+}) => (
+  <StyledCol
+    gutter={gutter}
+    default={def}
+    tablet={tablet}
+    desktop={desktop}
+    key={key}
+  >
     {children}
   </StyledCol>
 )
